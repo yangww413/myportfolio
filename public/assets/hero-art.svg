@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="抽象视觉设计工作台">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#251813"/>
+      <stop offset="0.36" stop-color="#6e4537"/>
+      <stop offset="0.68" stop-color="#284f5c"/>
+      <stop offset="1" stop-color="#171513"/>
+    </linearGradient>
+    <radialGradient id="warm" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f2c399" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#b24f35" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#b24f35" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1130" cy="210" r="330" fill="url(#warm)" filter="url(#soft)"/>
+  <circle cx="360" cy="720" r="260" fill="#7c8f86" opacity=".36" filter="url(#soft)"/>
+  <path d="M116 790 C 360 540, 525 720, 770 470 S 1220 300, 1490 520" fill="none" stroke="#f4efe7" stroke-opacity=".22" stroke-width="4"/>
+  <path d="M120 825 C 370 600, 560 770, 805 535 S 1230 382, 1510 615" fill="none" stroke="#d9ad8d" stroke-opacity=".28" stroke-width="2"/>
+  <g opacity=".2" stroke="#fffaf2" stroke-width="1">
+    <path d="M190 120H1410M190 220H1410M190 320H1410M190 420H1410M190 520H1410M190 620H1410M190 720H1410M190 820H1410"/>
+    <path d="M220 90V860M340 90V860M460 90V860M580 90V860M700 90V860M820 90V860M940 90V860M1060 90V860M1180 90V860M1300 90V860"/>
+  </g>
+  <g transform="translate(948 515) rotate(-11)">
+    <rect x="0" y="0" width="350" height="220" rx="22" fill="#fffaf2" opacity=".88"/>
+    <rect x="34" y="36" width="130" height="18" rx="9" fill="#b24f35"/>
+    <rect x="34" y="78" width="260" height="12" rx="6" fill="#171513" opacity=".26"/>
+    <rect x="34" y="108" width="220" height="12" rx="6" fill="#171513" opacity=".18"/>
+    <rect x="34" y="150" width="82" height="38" rx="19" fill="#446d62"/>
+  </g>
+  <g transform="translate(262 255) rotate(7)">
+    <rect x="0" y="0" width="310" height="410" rx="26" fill="#d7cab9" opacity=".72"/>
+    <circle cx="155" cy="132" r="78" fill="#b24f35" opacity=".62"/>
+    <path d="M74 292 C 118 230, 194 230, 238 292" fill="none" stroke="#171513" stroke-opacity=".45" stroke-width="16" stroke-linecap="round"/>
+  </g>
+</svg>

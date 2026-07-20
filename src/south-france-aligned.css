@@ -1,0 +1,460 @@
+@font-face {
+  font-family: "Montserrat Portfolio";
+  src: url("../public/assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+.wedding-case.scheme-orchid-page {
+  --paper: #f2eee6;
+  --ink: #161616;
+  --muted: #686159;
+  --line: rgba(22, 22, 22, 0.24);
+  --scheme-accent: #b12d27;
+  --scheme-accent-soft: rgba(177, 45, 39, 0.1);
+  --scheme-panel: rgba(242, 238, 230, 0.94);
+  --scheme-panel-strong: #f2eee6;
+  --scheme-shadow: rgba(22, 22, 22, 0.12);
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+.scheme-orchid-page .orchid-atmosphere {
+  background: var(--paper);
+  opacity: 1;
+}
+
+.scheme-orchid-page .orchid-atmosphere::before,
+.scheme-orchid-page .orchid-atmosphere::after {
+  display: none;
+}
+
+.scheme-orchid-page .case-nav {
+  height: 82px;
+  padding: 0 clamp(22px, 4vw, 54px);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  background: rgba(242, 238, 230, 0.92);
+  backdrop-filter: blur(16px);
+}
+
+.scheme-orchid-page .case-nav .logo {
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.scheme-orchid-page .case-nav .navlinks,
+.scheme-orchid-page .case-nav .contact-pill {
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.scheme-orchid-page .case-nav a {
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.scheme-orchid-page .case-nav a:hover,
+.scheme-orchid-page .case-nav a:focus-visible {
+  color: var(--scheme-accent);
+}
+
+.scheme-orchid-page .case-nav .contact-pill {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.scheme-orchid-page .case-nav .contact-pill:hover,
+.scheme-orchid-page .case-nav .contact-pill:focus-visible {
+  border-color: var(--scheme-accent);
+  background: rgba(177, 45, 39, 0.04);
+}
+
+.scheme-orchid-page .wedding-story {
+  width: min(1180px, calc(100% - 80px));
+  padding: clamp(118px, 11vw, 166px) 0 clamp(96px, 9vw, 132px);
+  text-align: left;
+}
+
+.scheme-orchid-page .scheme-story-copy {
+  max-width: 1040px;
+}
+
+.scheme-orchid-page .wedding-story .section-label {
+  justify-content: flex-start;
+  gap: clamp(22px, 2.8vw, 42px);
+  color: var(--ink);
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.scheme-orchid-page .wedding-story .section-label::before {
+  display: none;
+}
+
+.scheme-orchid-page .wedding-story .section-label span {
+  color: var(--scheme-accent);
+  font-family: var(--portfolio-serif);
+  font-size: clamp(76px, 8vw, 126px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.74;
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title {
+  gap: 0;
+  width: min(1040px, 100%);
+  max-width: none;
+  margin: clamp(34px, 4.5vw, 62px) auto 0;
+  color: var(--ink);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 0.94;
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title::before {
+  justify-self: start;
+  width: clamp(120px, 14vw, 200px);
+  margin-bottom: 24px;
+  background: var(--scheme-accent);
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-micro,
+.scheme-orchid-page .wedding-story .orchid-cover-title small {
+  justify-self: start;
+  color: var(--ink);
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-main,
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-accent {
+  justify-self: start;
+  overflow: visible;
+  padding: 0.07em 0 0.1em;
+  border: 0;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-main {
+  margin-top: 20px;
+  color: var(--ink);
+  font-size: clamp(78px, 8.8vw, 138px);
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-accent {
+  margin-top: -0.08em;
+  color: var(--scheme-accent);
+  font-size: clamp(70px, 8vw, 126px);
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-main::after,
+.scheme-orchid-page .wedding-story .orchid-cover-title .cover-accent::after {
+  display: none;
+}
+
+.scheme-orchid-page .wedding-story .orchid-cover-title small {
+  margin-top: 26px;
+  color: var(--muted);
+}
+
+.scheme-orchid-page .wedding-story .story-two-line {
+  justify-items: start;
+  max-width: 660px;
+  margin: clamp(38px, 4vw, 54px) 0 0;
+  color: var(--ink);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(17px, 1.55vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.scheme-orchid-page .wedding-story .case-meta {
+  width: min(940px, 100%);
+  margin: clamp(50px, 6vw, 78px) 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.scheme-orchid-page .wedding-story .case-meta div {
+  padding: 22px clamp(16px, 2vw, 28px) 24px 0;
+  border-right: 1px solid var(--line);
+}
+
+.scheme-orchid-page .wedding-story .case-meta div:last-child {
+  border-right: 0;
+}
+
+.scheme-orchid-page .wedding-story .case-meta small {
+  color: var(--scheme-accent);
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.scheme-orchid-page .wedding-story .case-meta b {
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.scheme-orchid-page .story-main-render {
+  width: min(1040px, 100%);
+  margin-top: clamp(66px, 7vw, 96px);
+}
+
+.scheme-orchid-page .story-main-render img {
+  filter: none;
+}
+
+.scheme-orchid-page .lines-mood-sheet {
+  width: min(1180px, calc(100% - 80px));
+  padding: clamp(104px, 10vw, 148px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+  gap: clamp(48px, 7vw, 110px);
+  align-items: end;
+  max-width: none;
+  margin: 0 0 clamp(58px, 7vw, 92px);
+  text-align: left;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-label {
+  justify-content: flex-start;
+  gap: clamp(20px, 2.5vw, 38px);
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+  color: var(--ink);
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-label::before {
+  display: none;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-label span {
+  color: var(--scheme-accent);
+  font-family: var(--portfolio-serif);
+  font-size: clamp(66px, 7vw, 108px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.72;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-head .scheme-text-title {
+  align-items: flex-start;
+  gap: 0;
+  color: var(--ink);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(42px, 4.8vw, 70px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-head .scheme-text-title .title-line {
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 800;
+  letter-spacing: inherit;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-head .scheme-text-title .title-line:first-child {
+  color: var(--scheme-accent);
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-head .scheme-text-title small {
+  margin-top: 22px;
+  color: var(--ink);
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.scheme-orchid-page .lines-mood-sheet .section-head .editorial-copy {
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 420px;
+  margin: 0;
+  color: var(--ink);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(16px, 1.35vw, 19px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.58;
+}
+
+.scheme-orchid-page .scheme-collage figure {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.scheme-orchid-page .render-palette span {
+  border: 1px solid rgba(22, 22, 22, 0.12);
+}
+
+.scheme-orchid-page .case-download {
+  border: 1px solid var(--scheme-accent);
+  border-radius: 0;
+  color: var(--scheme-accent);
+  background: transparent;
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.scheme-orchid-page .case-download:hover,
+.scheme-orchid-page .case-download:focus-visible {
+  color: var(--paper);
+  background: var(--scheme-accent);
+}
+
+.scheme-orchid-page > footer .footer-inner a {
+  min-width: 78px;
+  padding: 12px 10px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
+  background: rgba(242, 238, 230, 0.94);
+  box-shadow: none;
+  font-family: "Montserrat Portfolio", Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.scheme-orchid-page > footer .footer-inner a:hover,
+.scheme-orchid-page > footer .footer-inner a:focus-visible {
+  border-color: var(--scheme-accent);
+  color: var(--scheme-accent);
+  background: var(--paper);
+}
+
+@media (max-width: 820px) {
+  .scheme-orchid-page .case-nav {
+    height: 70px;
+    padding-inline: 18px;
+  }
+
+  .scheme-orchid-page .wedding-story,
+  .scheme-orchid-page .lines-mood-sheet {
+    width: min(100% - 36px, 680px);
+  }
+
+  .scheme-orchid-page .wedding-story {
+    padding: 96px 0 72px;
+  }
+
+  .scheme-orchid-page .wedding-story .section-label,
+  .scheme-orchid-page .lines-mood-sheet .section-label {
+    gap: 18px;
+    font-size: 11px;
+  }
+
+  .scheme-orchid-page .wedding-story .section-label span,
+  .scheme-orchid-page .lines-mood-sheet .section-label span {
+    font-size: 58px;
+  }
+
+  .scheme-orchid-page .wedding-story .orchid-cover-title {
+    width: 100%;
+    margin-top: 32px;
+    text-align: left;
+  }
+
+  .scheme-orchid-page .wedding-story .orchid-cover-title::before,
+  .scheme-orchid-page .wedding-story .orchid-cover-title .cover-micro,
+  .scheme-orchid-page .wedding-story .orchid-cover-title small,
+  .scheme-orchid-page .wedding-story .orchid-cover-title .cover-main,
+  .scheme-orchid-page .wedding-story .orchid-cover-title .cover-accent {
+    justify-self: start;
+  }
+
+  .scheme-orchid-page .wedding-story .orchid-cover-title .cover-main {
+    font-size: clamp(50px, 14vw, 76px);
+  }
+
+  .scheme-orchid-page .wedding-story .orchid-cover-title .cover-accent {
+    font-size: clamp(46px, 13vw, 70px);
+  }
+
+  .scheme-orchid-page .wedding-story .story-two-line {
+    justify-items: start;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .scheme-orchid-page .wedding-story .case-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .scheme-orchid-page .wedding-story .case-meta div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .scheme-orchid-page .wedding-story .case-meta div:last-child {
+    border-bottom: 0;
+  }
+
+  .scheme-orchid-page .lines-mood-sheet {
+    padding: 78px 0 64px;
+  }
+
+  .scheme-orchid-page .lines-mood-sheet .section-head {
+    display: block;
+    margin-bottom: 42px;
+  }
+
+  .scheme-orchid-page .lines-mood-sheet .section-head .scheme-text-title {
+    align-items: flex-start;
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .scheme-orchid-page .lines-mood-sheet .section-head .editorial-copy {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scheme-orchid-page *,
+  .scheme-orchid-page *::before,
+  .scheme-orchid-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-codex/
+dist-refined/
+source-ppts/
+audit-output/
+.reasonix/
+.agents/
+.codex*/
+*.log
+design-qa*.md

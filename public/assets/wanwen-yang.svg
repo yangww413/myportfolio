@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="杨婉雯肖像插画">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eee0cf"/>
+      <stop offset=".52" stop-color="#cdb8a4"/>
+      <stop offset="1" stop-color="#8f9b91"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="32%" r="42%">
+      <stop offset="0" stop-color="#fffaf2" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#fffaf2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#paper)"/>
+  <circle cx="420" cy="310" r="255" fill="url(#halo)"/>
+  <path d="M206 380 C 210 220, 300 120, 426 128 C 568 137, 642 256, 610 428 C 586 560, 520 650, 404 650 C 290 650, 206 540, 206 380Z" fill="#211a18"/>
+  <path d="M276 415 C 278 300, 332 238, 424 238 C 520 238, 570 306, 568 418 C 566 542, 508 626, 421 626 C 333 626, 274 540, 276 415Z" fill="#d9ad8d"/>
+  <path d="M290 362 C 345 318, 458 274, 564 364 C 540 245, 465 192, 372 214 C 312 228, 278 280, 290 362Z" fill="#211a18"/>
+  <circle cx="362" cy="423" r="10" fill="#171513"/>
+  <circle cx="478" cy="423" r="10" fill="#171513"/>
+  <path d="M407 446 C 402 476, 398 494, 380 516" fill="none" stroke="#9e654d" stroke-width="9" stroke-linecap="round"/>
+  <path d="M364 553 C 394 574, 443 574, 474 552" fill="none" stroke="#8d4133" stroke-width="10" stroke-linecap="round"/>
+  <path d="M154 936 C 178 762, 278 674, 418 674 C 558 674, 655 762, 682 936Z" fill="#446d62"/>
+  <path d="M260 770 C 340 830, 492 830, 578 770" fill="none" stroke="#fffaf2" stroke-opacity=".42" stroke-width="20" stroke-linecap="round"/>
+  <text x="54" y="87" fill="#171513" fill-opacity=".52" font-family="Arial, sans-serif" font-size="28">YANG WANWEN</text>
+  <text x="54" y="125" fill="#171513" fill-opacity=".36" font-family="Arial, sans-serif" font-size="18">VISUAL DESIGNER</text>
+</svg>

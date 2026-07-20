@@ -1,0 +1,442 @@
+.opening-intro {
+  --opening-target-left: calc(54px + clamp(28px, 4.5vw, 72px));
+  --opening-target-top: clamp(184px, 21.5vh, 220px);
+  --opening-target-width: min(58vw, 780px);
+  --opening-target-font-size: clamp(148px, 18vw, 300px);
+  --opening-target-line-height: 0.72;
+  --opening-center-width: min(32vw, 500px);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fffaf2;
+  background: #000;
+  isolation: isolate;
+  perspective: 720px;
+  perspective-origin: 50% 50%;
+}
+
+.portfolio-shell {
+  min-height: 100vh;
+  background: var(--archive-paper, #f2eee6);
+}
+
+.portfolio-app {
+  min-height: 100vh;
+  transition: opacity 720ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.portfolio-app-under-intro {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.portfolio-app-visible {
+  opacity: 1;
+}
+
+.opening-atmosphere,
+.opening-atmosphere::before,
+.opening-atmosphere::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.opening-atmosphere {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.036) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.026) 1px, transparent 1px);
+  background-size: 112px 112px;
+}
+
+.opening-atmosphere::before {
+  background:
+    linear-gradient(100deg, transparent 8%, rgba(217, 173, 141, 0.1) 34%, transparent 58%),
+    linear-gradient(22deg, transparent 18%, rgba(67, 118, 107, 0.12) 54%, transparent 76%);
+  filter: blur(22px);
+}
+
+.opening-atmosphere::after {
+  opacity: 0.13;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.opening-skip {
+  position: absolute;
+  z-index: 8;
+  top: clamp(18px, 4vw, 34px);
+  right: clamp(18px, 4vw, 42px);
+  padding: 10px 16px;
+  color: rgba(255, 250, 242, 0.78);
+  border: 1px solid rgba(255, 250, 242, 0.26);
+  border-radius: 999px;
+  background: rgba(10, 10, 10, 0.28);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
+.opening-bg-word {
+  position: absolute;
+  z-index: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 250, 242, 0.06);
+  font-family: "Montserrat Portfolio", Impact, sans-serif;
+  font-size: clamp(78px, 15vw, 238px);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.opening-paper-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: var(--archive-paper, #f2eee6);
+  pointer-events: none;
+}
+
+.opening-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  height: 24vh;
+  pointer-events: none;
+}
+
+.opening-fade-top {
+  top: 0;
+  background: linear-gradient(to bottom, #10131b 0%, rgba(16, 19, 27, 0.62) 42%, transparent 100%);
+}
+
+.opening-fade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #0a1817 0%, rgba(10, 24, 23, 0.62) 42%, transparent 100%);
+}
+
+.opening-helix {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 1px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.opening-helix-card {
+  position: absolute;
+  left: -74px;
+  top: -52px;
+  width: clamp(166px, 15vw, 204px);
+  aspect-ratio: 1.46;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 250, 242, 0.04);
+  box-shadow: 0 28px 86px rgba(0, 0, 0, 0.5), 0 0 34px rgba(217, 173, 141, 0.08);
+  transform: rotateY(var(--card-angle)) translateZ(clamp(310px, 36vw, 470px)) translateY(var(--card-y)) rotateY(10deg);
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  will-change: transform, opacity, filter;
+}
+
+.opening-helix-card::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(140deg, rgba(255, 250, 242, 0.22) 0%, rgba(255, 250, 242, 0.04) 38%, transparent 57%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.32), transparent 48%);
+  pointer-events: none;
+}
+
+.opening-helix-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.98) contrast(1.03);
+}
+
+.opening-helix-card figcaption {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  z-index: 1;
+  color: rgba(255, 250, 242, 0.92);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.72);
+}
+
+.opening-title {
+  position: relative;
+  z-index: 7;
+  margin: 0;
+  color: #d9ad8d;
+  font-family: "Montserrat Portfolio", Impact, sans-serif;
+  font-size: var(--opening-target-font-size);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  line-height: var(--opening-target-line-height);
+  width: 100%;
+  overflow: hidden;
+  letter-spacing: -0.035em;
+  text-align: left;
+  transform-style: preserve-3d;
+  text-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.opening-title-anchor {
+  position: absolute;
+  z-index: 7;
+  min-width: 0;
+  transform-origin: left top;
+  pointer-events: none;
+}
+
+.opening-title > span {
+  display: block;
+  width: calc(100% / 0.5);
+  transform: scaleX(0.5);
+  transform-origin: left center;
+}
+
+.opening-bridge-kicker {
+  position: absolute;
+  z-index: 7;
+  bottom: clamp(36px, 8vh, 76px);
+  right: 24px;
+  left: 24px;
+  margin: 0;
+  color: #5f5952;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+.opening-intro-reduced h1 {
+  margin: 0;
+  color: #d9ad8d;
+  font-family: "Montserrat Portfolio", Impact, sans-serif;
+  font-size: clamp(54px, 10vw, 138px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+@media (max-width: 760px) {
+  .opening-intro {
+    --opening-target-left: 20px;
+    --opening-target-top: 152px;
+    --opening-target-width: calc(100vw - 40px);
+    --opening-center-width: min(56vw, 240px);
+    perspective: 620px;
+  }
+
+  .opening-bg-word {
+    font-size: clamp(70px, 22vw, 132px);
+  }
+
+  .opening-helix-card {
+    left: -54px;
+    top: -38px;
+    width: clamp(124px, 35vw, 154px);
+    transform: rotateY(var(--card-angle)) translateZ(clamp(205px, 62vw, 286px)) translateY(calc(var(--card-y) * 0.82)) rotateY(10deg);
+  }
+
+  .opening-helix-card figcaption {
+    left: 10px;
+    right: 10px;
+    bottom: 9px;
+    font-size: 9px;
+  }
+
+  .opening-title {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(54px, 18vw, 92px);
+    line-height: 0.94;
+  }
+
+  .opening-title > span { width: calc(100% / 0.56); transform: scaleX(0.56); }
+
+  .opening-bridge-kicker {
+    bottom: 30px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-app { transition-duration: 0.01ms; }
+}
+
+.portfolio-app .hero-film-intro {
+  display: none;
+}
+
+.portfolio-app .hero-copy {
+  opacity: 1;
+  animation: heroCopyIn 900ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.portfolio-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #d9ad8d;
+  background: #18120f;
+  font-family: var(--portfolio-serif);
+  font-size: clamp(48px, 9vw, 132px);
+}
+
+.opening-intro-lux {
+  color: #f7f1e8;
+  background:
+    linear-gradient(90deg, rgba(3, 5, 4, 0.92) 0%, rgba(3, 5, 4, 0.62) 42%, rgba(3, 5, 4, 0.2) 100%),
+    linear-gradient(180deg, rgba(3, 5, 4, 0.62), rgba(3, 5, 4, 0.16) 44%, rgba(0, 0, 0, 0.66)),
+    url("/assets/hero-lux-intelligence.png") center / cover no-repeat,
+    #030504;
+  perspective: none;
+}
+
+.opening-intro-lux .opening-atmosphere {
+  background:
+    linear-gradient(90deg, rgba(247, 241, 232, 0.052) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(247, 241, 232, 0.034) 1px, transparent 1px);
+  background-size: 144px 144px;
+  opacity: 0.54;
+}
+
+.opening-intro-lux .opening-atmosphere::before {
+  background:
+    radial-gradient(ellipse at 70% 74%, rgba(219, 196, 153, 0.16), transparent 34%),
+    linear-gradient(112deg, transparent 12%, rgba(247, 241, 232, 0.08) 44%, transparent 64%);
+  filter: blur(18px);
+}
+
+.opening-intro-lux .opening-atmosphere::after {
+  opacity: 0.08;
+}
+
+.opening-intro-lux .opening-skip {
+  color: rgba(247, 241, 232, 0.76);
+  border-color: rgba(247, 241, 232, 0.28);
+  border-radius: 2px;
+  background: rgba(3, 5, 4, 0.26);
+  letter-spacing: 0;
+}
+
+.opening-intro-lux .opening-bg-word {
+  left: clamp(20px, 5vw, 72px);
+  right: auto;
+  bottom: clamp(24px, 5vw, 70px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(247, 241, 232, 0.13);
+  font-size: clamp(66px, 13vw, 210px);
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.opening-line {
+  position: absolute;
+  z-index: 2;
+  background: rgba(247, 241, 232, 0.28);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.opening-line-a {
+  left: clamp(20px, 5vw, 72px);
+  right: clamp(20px, 7vw, 112px);
+  top: 49%;
+  height: 1px;
+}
+
+.opening-line-b {
+  top: clamp(82px, 14vh, 130px);
+  bottom: clamp(58px, 10vh, 98px);
+  right: clamp(72px, 16vw, 246px);
+  width: 1px;
+  transform-origin: top center;
+}
+
+.opening-kicker {
+  position: relative;
+  z-index: 3;
+  width: min(1160px, calc(100% - 64px));
+  margin: 0 auto 18px;
+  align-self: end;
+  justify-self: stretch;
+  color: rgba(247, 241, 232, 0.68);
+  font-family: "Montserrat Portfolio", Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.opening-intro-lux .opening-title {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 0;
+  width: min(1160px, calc(100% - 64px));
+  margin: 0 auto;
+  align-self: start;
+  justify-self: stretch;
+  color: #f7f1e8;
+  font-size: clamp(78px, 11vw, 174px);
+  line-height: 0.84;
+  letter-spacing: 0;
+  text-align: left;
+  text-shadow: 0 28px 90px rgba(0, 0, 0, 0.52);
+}
+
+.opening-intro-lux .opening-title i {
+  color: #f7f1e8;
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .opening-intro-lux {
+    background:
+      linear-gradient(90deg, rgba(3, 5, 4, 0.94) 0%, rgba(3, 5, 4, 0.72) 55%, rgba(3, 5, 4, 0.36) 100%),
+      linear-gradient(180deg, rgba(3, 5, 4, 0.64), rgba(3, 5, 4, 0.14) 42%, rgba(0, 0, 0, 0.68)),
+      url("/assets/hero-lux-intelligence.png") 66% center / cover no-repeat,
+      #030504;
+  }
+
+  .opening-line-b {
+    right: 28px;
+  }
+
+  .opening-kicker,
+  .opening-intro-lux .opening-title {
+    width: calc(100% - 38px);
+  }
+
+  .opening-intro-lux .opening-title {
+    font-size: clamp(58px, 18vw, 86px);
+  }
+}

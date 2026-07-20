@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>婚礼方案 PPT 浏览 | WANWEN</title>
+  <link rel="stylesheet" href="../src/style.css" />
+  <link rel="stylesheet" href="../src/video.css" />
+  <link rel="stylesheet" href="../src/tosummer.css" />
+</head>
+<body>
+  <main class="ppt-preview-page wedding-case">
+    <div class="case-atmosphere lines-atmosphere" aria-hidden="true"></div>
+    <nav class="case-nav">
+      <a class="logo" href="../portfolio-preview.html#home">WANWEN</a>
+      <div class="navlinks"><a href="../portfolio-preview.html#spatial-design">WORK</a><a href="../portfolio-preview.html#about">ABOUT</a></div>
+      <a class="contact-pill" id="back-link" href="../portfolio-preview.html#spatial-design">BACK</a>
+    </nav>
+
+    <section class="ppt-preview-hero">
+      <div class="section-label"><span id="deck-code">PPT</span> FULL PROPOSAL</div>
+      <h1 id="deck-title">婚礼方案浏览</h1>
+      <p id="deck-subtitle">完整方案在线浏览</p>
+    </section>
+
+    <section class="ppt-slide-stack" id="slide-stack" aria-label="完整方案 PPT 预览"></section>
+    <section class="ppt-preview-return" aria-label="返回上一页">
+      <a class="ppt-return-button" id="bottom-back-link" href="../portfolio-preview.html#spatial-design">返回婚礼空间作品线</a>
+    </section>
+  </main>
+
+  <script>
+    const decks = {
+      "1018-xijiao-one": {
+        code: "1018",
+        title: "Lines, Points, Love",
+        subtitle: "西郊壹号婚礼方案 PPT",
+        back: "./1018-xijiao-one.html",
+        path: "/projects/1018-xijiao-one/ppt-preview",
+        slides: 37,
+      },
+      "yu-ming": {
+        code: "1025",
+        title: "《遇·铭》",
+        subtitle: "西郊水厅婚礼方案 PPT",
+        back: "./yu-ming.html",
+        path: "/projects/yu-ming/ppt-preview",
+        slides: 43,
+      },
+      "south-france-floral": {
+        code: "1008",
+        title: "《白兰圣誓 南法花筵》",
+        subtitle: "西郊意境园婚礼方案 PPT",
+        back: "./south-france-floral.html",
+        path: "/projects/south-france-floral/ppt-preview",
+        slides: 25,
+      },
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const deck = decks[params.get("deck")] || decks["1018-xijiao-one"];
+    const stack = document.getElementById("slide-stack");
+
+    document.title = `${deck.title} | 婚礼方案 PPT 浏览`;
+    document.getElementById("deck-code").textContent = deck.code;
+    document.getElementById("deck-title").textContent = deck.title;
+    document.getElementById("deck-subtitle").textContent = deck.subtitle;
+    document.getElementById("back-link").href = deck.back;
+    document.getElementById("bottom-back-link").href = deck.back;
+
+    for (let index = 1; index <= deck.slides; index += 1) {
+      const figure = document.createElement("figure");
+      figure.className = "ppt-preview-slide";
+
+      const label = document.createElement("figcaption");
+      label.textContent = String(index).padStart(2, "0");
+
+      const image = document.createElement("img");
+      image.src = `${deck.path}/slide-${String(index).padStart(3, "0")}.jpg`;
+      image.alt = `${deck.title} PPT 第 ${index} 页`;
+      image.loading = index <= 2 ? "eager" : "lazy";
+      image.decoding = "async";
+      image.draggable = false;
+
+      figure.append(label, image);
+      stack.append(figure);
+    }
+  </script>
+</body>
+</html>

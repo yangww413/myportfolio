@@ -1,0 +1,22 @@
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+::selection {
+  color: #fffaf2;
+  background: #b24f35;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee6da;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8aa99;
+  border-radius: 999px;
+}

@@ -1,0 +1,651 @@
+/* Final portfolio polish: stable home, lightweight motion, unified case studies. */
+
+.opening-intro {
+  perspective: 1100px;
+  background: #000 !important;
+}
+
+.opening-atmosphere {
+  background: #000 !important;
+}
+
+.opening-atmosphere::before,
+.opening-atmosphere::after,
+.opening-fade,
+.opening-bg-word {
+  display: none !important;
+}
+
+.opening-helix {
+  contain: layout style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.opening-helix-card {
+  --opening-card-width: clamp(135px, 12.8vw, 180px);
+  left: calc(var(--opening-card-width) / -2);
+  top: calc(var(--opening-card-width) / -2.92);
+  width: var(--opening-card-width);
+  contain: layout paint;
+  opacity: 0.96;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.44);
+  backface-visibility: visible;
+  transform: rotateY(calc(var(--card-angle) + var(--helix-phase, 0deg))) translateZ(clamp(339px, 32.2vw, 453px)) translateY(var(--card-y));
+  will-change: transform;
+}
+
+.opening-helix-card img {
+  filter: saturate(0.96) contrast(1.02);
+  transform: translateZ(0);
+}
+
+.opening-helix-card::after {
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.14), transparent 54%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.12), transparent 52%);
+}
+
+.opening-title-anchor,
+.opening-title {
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+body .opening-intro .opening-title {
+  font-size: var(--opening-target-font-size);
+  line-height: var(--opening-target-line-height);
+  transform-origin: left top;
+  text-shadow: none;
+}
+
+/* Hero wordmark keeps its existing compressed proportions and occupies half the page. */
+.editorial-home .editorial-title h1 {
+  width: min(50vw, 900px);
+  max-width: none;
+  overflow: visible;
+  font-size: clamp(148px, 18vw, 300px);
+  line-height: 0.72;
+}
+
+.editorial-home .editorial-title h1 span {
+  width: calc(100% / 0.5);
+  transform: scaleX(0.5);
+  transform-origin: left center;
+}
+
+.editorial-home .editorial-role {
+  margin-top: clamp(26px, 3vw, 42px) !important;
+}
+
+/* Stronger red/black hierarchy in the About statement. */
+.editorial-home .archive-about-copy h2 {
+  font-size: clamp(34px, 3.35vw, 54px);
+  line-height: 1.2;
+}
+
+.editorial-home .archive-about-copy .about-statement-line {
+  font-size: 0.76em;
+  line-height: 1.38;
+}
+
+.editorial-home .archive-about-copy .about-statement-line em {
+  display: inline-block;
+  font-size: 1.38em !important;
+  line-height: 0.92;
+}
+
+.editorial-home .archive-about-copy .about-statement-line small {
+  font-size: 1em;
+}
+
+/* Keep the video mosaic deterministic across route returns and media readiness. */
+.editorial-home .archive-video-mosaic,
+.editorial-home .archive-video-mosaic-grid {
+  contain: layout paint;
+}
+
+.editorial-home .archive-video-mosaic-grid {
+  grid-auto-flow: row;
+  grid-auto-columns: 0;
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+.editorial-home .archive-video-mosaic-grid > img {
+  position: relative;
+  inset: auto;
+  aspect-ratio: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CG is a true corner badge on the Nautica project row. */
+.editorial-home .archive-project-links a {
+  position: relative;
+}
+
+.editorial-home .archive-project-badge {
+  position: relative;
+  top: -0.72em;
+  right: auto;
+  margin-left: 4px;
+  transform: none;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* The gauze image itself is redrawn as a living wallpaper, not covered by a surface effect. */
+.editorial-home .archive-romantic-preview {
+  overflow: hidden;
+  isolation: isolate;
+  background: #efe8dc;
+}
+
+.editorial-home .archive-romantic-frame-base {
+  opacity: 0 !important;
+}
+
+.editorial-home .archive-romantic-frame-iridescent {
+  display: none !important;
+}
+
+.editorial-home .archive-fluid-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  mix-blend-mode: normal;
+  filter: none;
+  animation: none;
+  pointer-events: none;
+}
+
+.editorial-home .archive-romantic-preview::before,
+.editorial-home .archive-romantic-preview::after {
+  display: none !important;
+}
+
+@keyframes archive-caustic-breathe {
+  0% { opacity: 0.18; transform: translate3d(-2%, -1%, 0) scale(1.02); }
+  45% { opacity: 0.34; }
+  100% { opacity: 0.23; transform: translate3d(3%, 2%, 0) scale(1.08); }
+}
+
+@keyframes archive-caustic-drift {
+  0% { opacity: 0.12; background-position: 8% 12%, 80% 34%, 44% 90%, 0% 0%; transform: translate3d(-5%, -4%, 0) scale(1.04); }
+  52% { opacity: 0.28; }
+  100% { opacity: 0.16; background-position: 62% 54%, 24% 76%, 78% 20%, 100% 100%; transform: translate3d(5%, 4%, 0) scale(1.1); }
+}
+
+@keyframes archive-fabric-breathe {
+  0% { transform: translate3d(-0.35%, 0.25%, 0) scale(1.012); filter: saturate(0.94) brightness(1.01); }
+  50% { transform: translate3d(0.45%, -0.35%, 0) scale(1.025); filter: saturate(0.98) brightness(1.045); }
+  100% { transform: translate3d(-0.2%, -0.5%, 0) scale(1.038); filter: saturate(1.01) brightness(1.025); }
+}
+
+@keyframes archive-fluid-breathe {
+  0% { opacity: 0.42; }
+  48% { opacity: 0.68; }
+  100% { opacity: 0.5; }
+}
+
+/* Full-width frosted project navigation. */
+.case-page .case-nav {
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(22px, 4vw, 64px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(8, 8, 8, 0.62);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px) saturate(1.22);
+  -webkit-backdrop-filter: blur(20px) saturate(1.22);
+}
+
+.case-page .case-nav .contact-pill {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.liushen-case .case-nav,
+.wedding-case .case-nav {
+  color: #161616;
+  border-bottom-color: rgba(22, 22, 22, 0.12);
+  background: rgba(242, 238, 230, 0.72);
+  box-shadow: 0 10px 34px rgba(32, 28, 22, 0.05);
+}
+
+.liushen-case .case-nav .contact-pill,
+.wedding-case .case-nav .contact-pill {
+  color: #161616;
+  border-color: rgba(22, 22, 22, 0.2);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Liushen overview: larger cards, left-aligned title under WANWEN, no double autoplay track. */
+.liushen-overview-shell {
+  min-height: clamp(560px, 57vw, 780px);
+}
+
+.liushen-overview-chrome {
+  align-items: flex-start;
+}
+
+.liushen-overview-meta {
+  top: clamp(48px, 4.5vw, 66px);
+  left: clamp(14px, 2vw, 28px);
+  width: min(560px, calc(100% - 56px));
+  gap: 6px;
+  text-align: left;
+}
+
+.liushen-overview-meta h2 {
+  font-size: clamp(30px, 3vw, 46px);
+}
+
+.liushen-overview-viewport {
+  padding: clamp(150px, 14vw, 198px) max(7vw, 84px) clamp(94px, 9vw, 126px);
+  scroll-snap-type: none;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+}
+
+.liushen-overview-track {
+  gap: clamp(18px, 2vw, 30px);
+  animation: liushenOverviewMarquee 78s linear infinite;
+  will-change: transform;
+}
+
+.liushen-overview-carousel:hover .liushen-overview-track,
+.liushen-overview-carousel:focus-within .liushen-overview-track {
+  animation-play-state: paused;
+}
+
+.liushen-overview-slide,
+.liushen-overview-slide.is-active {
+  flex-basis: clamp(156px, 13vw, 218px);
+  height: clamp(266px, 22vw, 368px);
+  opacity: 0.72;
+  filter: none;
+  transform: translateZ(0) scale(0.985);
+  transition: opacity 220ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  scroll-snap-align: center;
+  will-change: transform, opacity;
+}
+
+.liushen-overview-slide.is-active {
+  opacity: 1;
+  transform: translateZ(0) scale(1.045);
+}
+
+.liushen-overview-slide video,
+.liushen-overview-slide .liushen-overview-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+}
+
+.liushen-overview-slide video {
+  background: #ebe8df;
+}
+
+/* TEMPTUNE keeps its editorial title while CG reads as a compact corner mark. */
+.nautica-case .black-label-title i {
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  padding-right: 0.58em;
+}
+
+.nautica-case .nautica-cg-badge {
+  position: absolute;
+  top: -0.1em;
+  right: 0;
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.25em;
+  padding: 0.28em 0.36em 0.22em;
+  border: 1px solid currentColor;
+  font-family: "Montserrat Portfolio", Montserrat, Inter, sans-serif;
+  font-size: 0.16em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* Three wedding decks share one 50/50 reading rhythm while keeping their own imagery. */
+@media (min-width: 901px) {
+  .wedding-case.scheme-lines-page .lines-mood-sheet,
+  .wedding-case.scheme-orchid-page .lines-mood-sheet {
+    display: grid;
+    grid-template-columns: minmax(0, 520px) minmax(0, 720px);
+    grid-template-rows: auto auto auto;
+    column-gap: clamp(24px, 2vw, 32px);
+    align-items: center;
+    justify-content: center;
+    width: min(1320px, calc(100% - 120px));
+    min-height: clamp(640px, 52vw, 720px);
+    padding: clamp(36px, 4vw, 56px) 0;
+  }
+
+  .wedding-case.scheme-lines-page .lines-mood-sheet .section-head,
+  .wedding-case.scheme-orchid-page .lines-mood-sheet .section-head {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 520px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .wedding-case.scheme-lines-page .lines-mood-sheet .section-label,
+  .wedding-case.scheme-orchid-page .lines-mood-sheet .section-label {
+    justify-content: flex-start;
+  }
+
+  .wedding-case.scheme-lines-page .lines-mood-sheet .section-head .editorial-title,
+  .wedding-case.scheme-orchid-page .lines-mood-sheet .section-head .editorial-title {
+    align-items: flex-start;
+    font-size: clamp(38px, 3.45vw, 58px);
+    line-height: 1.14;
+    text-align: left;
+  }
+
+  .wedding-case.scheme-lines-page .lines-mood-sheet .section-head .editorial-copy,
+  .wedding-case.scheme-orchid-page .lines-mood-sheet .section-head .editorial-copy {
+    align-items: flex-start;
+    max-width: 500px;
+    margin: clamp(30px, 3.5vw, 50px) 0 0;
+    color: rgba(38, 35, 30, 0.68);
+    font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    font-size: clamp(15px, 1.22vw, 18px);
+    letter-spacing: 0.02em;
+    line-height: 1.72;
+    text-align: left;
+  }
+
+  .wedding-case.scheme-lines-page .lines-mood-sheet .scheme-collage,
+  .wedding-case.scheme-orchid-page .lines-mood-sheet .scheme-collage {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: 100%;
+    min-height: clamp(460px, 36vw, 560px);
+    margin: 0;
+  }
+
+  .wedding-case.scheme-lines-page .lines-render-sheet > .render-palette,
+  .wedding-case.scheme-orchid-page .lines-render-sheet > .render-palette {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: auto;
+    margin: 0;
+    transform: translateX(-24px);
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .wedding-case.scheme-lines-page .render-palette span,
+  .wedding-case.scheme-orchid-page .render-palette span {
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(22, 22, 22, 0.12);
+    border-radius: 50%;
+    box-shadow: none;
+  }
+
+  .wedding-case.scheme-lines-page .lines-render-sheet .case-actions,
+  .wedding-case.scheme-orchid-page .lines-render-sheet .case-actions {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .scheme-render-collage {
+    height: clamp(560px, 42vw, 640px) !important;
+    min-height: 0 !important;
+  }
+
+  .wedding-case.scheme-yuming-page .lines-render-sheet .scheme-render-collage {
+    height: clamp(520px, 39vw, 590px) !important;
+    min-height: 0 !important;
+  }
+
+  .wedding-case.scheme-orchid-page .lines-render-sheet .scheme-render-collage {
+    height: clamp(520px, 39vw, 590px) !important;
+    min-height: 0 !important;
+  }
+
+  /* Keep the Lines image widths and path while separating 02/03 and 05/06. */
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .render-e { --tour-y: -9%; }
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .render-c { --tour-y: -8%; }
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .render-f { --tour-y: 17%; }
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .render-d { --tour-y: 31%; }
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .render-b { --tour-y: 42%; }
+  .wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .render-a { --tour-y: 76%; }
+
+  /* Yu Ming keeps 02, 03, 04 / 05, 01, with a more editorial stagger and preserved image ratios. */
+  .wedding-case.scheme-yuming-page .lines-render-sheet .render-b { --board-x: 3%; --board-y: 0%; --board-w: 36%; --board-tilt: rotate(-0.7deg); }
+  .wedding-case.scheme-yuming-page .lines-render-sheet .render-c { --board-x: 38%; --board-y: 6%; --board-w: 38%; --board-tilt: rotate(0.45deg); }
+  .wedding-case.scheme-yuming-page .lines-render-sheet .render-d { --board-x: 73%; --board-y: 15%; --board-w: 29%; --board-tilt: rotate(-0.55deg); }
+  .wedding-case.scheme-yuming-page .lines-render-sheet .render-e { --board-x: 8%; --board-y: 54%; --board-w: 43%; --board-tilt: rotate(0.6deg); }
+  .wedding-case.scheme-yuming-page .lines-render-sheet .render-a { --board-x: 49%; --board-y: 46%; --board-w: 49%; --board-tilt: rotate(-0.45deg); }
+
+  .wedding-case.scheme-yuming-page .lines-render-sheet > .render-palette {
+    transform: translateX(-58px);
+  }
+
+  .wedding-case.scheme-orchid-page .lines-reference-sheet .scheme-text-title .title-line:nth-child(2) {
+    font-size: clamp(36px, 3.15vw, 53px);
+    letter-spacing: 0.025em;
+    white-space: nowrap !important;
+    word-break: keep-all;
+  }
+}
+
+/* South France keeps its title motion but uses the same type system as the other wedding cases. */
+.wedding-case.scheme-orchid-page,
+.wedding-case.scheme-orchid-page button,
+.wedding-case.scheme-orchid-page a {
+  font-family: "Montserrat Portfolio", Montserrat, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+.wedding-case.scheme-orchid-page .scheme-cover-title,
+.wedding-case.scheme-orchid-page .scheme-cover-title-accent {
+  font-family: "Cormorant Garamond Portfolio", "Cormorant Garamond", Garamond, "Times New Roman", serif;
+}
+
+.wedding-case.scheme-orchid-page .lines-mood-sheet .editorial-title,
+.wedding-case.scheme-orchid-page .lines-mood-sheet .editorial-copy,
+.wedding-case.scheme-orchid-page .lines-render-sheet .editorial-title,
+.wedding-case.scheme-orchid-page .lines-render-sheet .editorial-copy {
+  font-family: "Songti SC", STSong, SimSun, serif;
+}
+
+.editorial-home .archive-contact-lead h2 {
+  font-size: clamp(30px, 3.1vw, 48px);
+  line-height: 1.3;
+}
+
+.editorial-home .archive-contact-lead h2 span {
+  display: block;
+}
+
+.editorial-home .archive-belief p {
+  font-size: clamp(26px, 2.1vw, 32px);
+  line-height: 1.68;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 901px) {
+  .editorial-home .archive-capabilities {
+    grid-template-columns: 1.02fr 0.9fr 1.08fr;
+  }
+
+  .editorial-home .archive-belief {
+    padding-inline: clamp(28px, 2.7vw, 42px);
+  }
+}
+
+/* Wedding renderings: no numeric badges; hovered work enlarges above the collage. */
+.wedding-case .lines-render-sheet .scheme-render-collage figure::before {
+  display: none !important;
+  content: none !important;
+}
+
+.wedding-case .lines-render-sheet .scheme-render-collage figure,
+.wedding-case .lines-render-sheet .scheme-render-collage figure img {
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1), filter 360ms ease !important;
+}
+
+.wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .scheme-render-collage figure:hover,
+.wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .scheme-render-collage figure:focus-visible,
+.wedding-case.scheme-lines-page:not(.scheme-yuming-page):not(.scheme-orchid-page) .lines-render-sheet .scheme-render-collage figure.is-active {
+  z-index: 20;
+  transform: translate3d(0, -8px, 0) scale(1.12) !important;
+}
+
+.wedding-case.scheme-yuming-page .lines-render-sheet .scheme-render-collage figure:hover,
+.wedding-case.scheme-yuming-page .lines-render-sheet .scheme-render-collage figure:focus-visible,
+.wedding-case.scheme-yuming-page .lines-render-sheet .scheme-render-collage figure.is-active,
+.wedding-case.scheme-orchid-page .lines-render-sheet .scheme-render-collage figure:hover,
+.wedding-case.scheme-orchid-page .lines-render-sheet .scheme-render-collage figure:focus-visible,
+.wedding-case.scheme-orchid-page .lines-render-sheet .scheme-render-collage figure.is-active {
+  z-index: 20;
+  transform: scale(1.14) !important;
+}
+
+.wedding-case .lines-render-sheet .scheme-render-collage figure:hover img,
+.wedding-case .lines-render-sheet .scheme-render-collage figure:focus-visible img,
+.wedding-case .lines-render-sheet .scheme-render-collage figure.is-active img {
+  animation: none !important;
+  filter: drop-shadow(0 28px 38px rgba(52, 41, 29, 0.2)) saturate(1.02) contrast(1.025) !important;
+}
+
+.editorial-home .archive-belief p span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .editorial-home .editorial-title h1 {
+    width: 100%;
+    font-size: clamp(88px, 24vw, 168px);
+  }
+
+  .wedding-case .render-palette,
+  .wedding-case.scheme-lines-page .lines-render-sheet > .render-palette {
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .wedding-case .render-palette span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+
+  .wedding-case .lines-render-sheet .scheme-render-collage figure:hover,
+  .wedding-case .lines-render-sheet .scheme-render-collage figure:focus-visible {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .editorial-home .archive-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .editorial-home .archive-navlinks {
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .liushen-director-heading {
+    width: min(100% - 32px, 680px);
+    max-width: 100%;
+  }
+
+  .liushen-director-heading h1 {
+    max-width: 100%;
+    font-size: clamp(36px, 10vw, 42px);
+    line-height: 1.05;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .liushen-director-heading p {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.82;
+  }
+
+  .liushen-overview-shell {
+    min-height: 610px;
+  }
+
+  .liushen-overview-meta {
+    top: 48px;
+  }
+
+  .liushen-overview-meta h2 {
+    font-size: 28px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .liushen-overview-viewport {
+    padding: 164px 54px 94px;
+  }
+}
+
+@media (max-width: 760px) {
+  .opening-helix-card {
+    --opening-card-width: clamp(96px, 27vw, 116px);
+    transform: rotateY(calc(var(--card-angle) + var(--helix-phase, 0deg))) translateZ(clamp(241px, 67.9vw, 292px)) translateY(calc(var(--card-y) * 0.82));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening-helix-card,
+  .liushen-overview-slide {
+    transition: none !important;
+  }
+
+  .liushen-overview-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .editorial-home .archive-romantic-preview::before,
+  .editorial-home .archive-romantic-preview::after,
+  .editorial-home .archive-romantic-frame-base,
+  .editorial-home .archive-fluid-canvas {
+    animation: none !important;
+  }
+
+  .editorial-home .archive-romantic-preview::before,
+  .editorial-home .archive-romantic-preview::after,
+  .editorial-home .archive-fluid-canvas { opacity: 0 !important; }
+
+  .editorial-home .archive-romantic-frame-base { opacity: 1 !important; }
+}

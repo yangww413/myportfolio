@@ -1,0 +1,23 @@
+.hero-media {
+  transform: scale(1.01);
+}
+
+.hero-media img {
+  animation: cinematicDrift 24s ease-in-out infinite alternate;
+}
+
+@keyframes cinematicDrift {
+  from {
+    transform: scale(1.02) translate3d(-1%, 0, 0);
+  }
+
+  to {
+    transform: scale(1.08) translate3d(1%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img {
+    animation: none;
+  }
+}
