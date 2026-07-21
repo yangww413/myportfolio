@@ -3,6 +3,7 @@ dist/
 dist-codex/
 dist-refined/
 source-ppts/
+large-files-backup/
 audit-output/
 .reasonix/
 .agents/
