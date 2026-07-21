@@ -14,22 +14,22 @@ const INTRO_TIMING = {
 };
 
 const WORK_IMAGES = [
-  "/projects/1018-xijiao-one/renders/ceremony-area.png",
+  "/assets/intro-thumbs/ceremony-area.jpg",
   "/projects/brand-film-direction/video-3s-posters/liushen-added-04-3s.png",
-  "/projects/yu-ming/renders/ceremony-lawn-wide.jpeg",
-  "/projects/south-france-floral/renders/indoor-render.jpeg",
+  "/assets/intro-thumbs/ceremony-lawn-wide.jpg",
+  "/assets/intro-thumbs/indoor-render.jpg",
   "/projects/brand-film-direction/video-3s-posters/liushen-tianjiarui-gwpv3-3s.png",
-  "/projects/1018-xijiao-one/renders/main-stage.jpg",
-  "/projects/yu-ming/renders/indoor-stage.jpeg",
+  "/assets/intro-thumbs/main-stage.jpg",
+  "/assets/intro-thumbs/indoor-stage.jpg",
   "/projects/brand-film-direction/video-3s-posters/liushen-friend-check-3s.png",
-  "/projects/1018-xijiao-one/renders/photo-wall-welcome.jpg",
+  "/assets/intro-thumbs/photo-wall-welcome.jpg",
   "/projects/brand-film-direction/video-3s-posters/liushen-work-03-3s.png",
-  "/projects/south-france-floral/renders/photo-area-render.jpeg",
-  "/projects/yu-ming/renders/pink-heart-stage-render.png",
-  "/projects/1018-xijiao-one/renders/dessert-area.png",
-  "/projects/south-france-floral/renders/garden-ceremony-render.png",
-  "/projects/yu-ming/references/silver-helix.png",
-  "/assets/wanwen-yang.jpg",
+  "/assets/intro-thumbs/photo-area-render.jpg",
+  "/assets/intro-thumbs/pink-heart-stage-render.jpg",
+  "/assets/intro-thumbs/dessert-area.jpg",
+  "/assets/intro-thumbs/garden-ceremony-render.jpg",
+  "/assets/intro-thumbs/silver-helix.jpg",
+  "/assets/intro-thumbs/wanwen-yang.jpg",
 ];
 
 const WORK_LABELS = [
