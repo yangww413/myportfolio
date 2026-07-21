@@ -10,3 +10,4 @@ audit-output/
 .codex*/
 *.log
 design-qa*.md
+*.zip
